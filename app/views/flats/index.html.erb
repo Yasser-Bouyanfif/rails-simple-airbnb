@@ -1,0 +1,7 @@
+<br /><h1 class="modal-title fs-5">Flats list</h1>
+<hr>
+<%= link_to "Add a new flat", new_flat_path %>
+<hr>
+<% @flats.each do |flat| %>
+<%= link_to flat.name, flat_path(flat.id) %> <%= link_to '<i class="fa-solid fa-pen-to-square"></i>'.html_safe, edit_flat_path(flat) %> <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, flat_path(flat), data: {turbo_method: :delete} %><br />
+<% end %>
